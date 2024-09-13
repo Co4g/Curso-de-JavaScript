@@ -22,20 +22,27 @@
     <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
         interaja
     </div>
-
+    
     <script>
         var area = window.document.getElementById('area');
-        area.addEventListener('')
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+        
         function clicar() {
-            area.innerText = 'Clicou'
+            area.innerText = 'Clicou';
+            area.style.background = 'white';
+            area.style.color = 'black';
         }
 
         function entrar() {
-            area.innerText = 'Entrou'
+            area.innerText = 'Entrou';
         }
 
         function sair() {
-            area.innerText = 'Saiu'
+            area.innerText = 'Saiu';
+            area.style.background = 'green';
+            area.style.color = 'black';
         }
     </script>
 </body>
