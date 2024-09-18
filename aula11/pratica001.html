@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Queremos saber mais sobre você!</h1>
+    <p><label for="inome">Digite seu nome:</label><input type="text" name="nome" id="inome" placeholder="seu nome"></p>
+    <p><label for="idade">Informe sua idade:</label> <input type="number" name="idade" id="idade"></p>
+    <p>
+        <label for="ipais">Nacionalidade:</label>
+        <select name="pais" id="ipais" >
+            <option value="Brasil">Brasil</option>
+            <option value="EUA">Estados Unidos</option>
+            <option value="japao">Japão</option>
+            <option value="Outro">Outro</option>
+        </select>
+    </p>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+        
+    </div>
+    <script>
+        function verificar() {
+            var idade = document.querySelector('#idade').value
+            var nome = document.querySelector('#inome').value
+            var pais = document.querySelector('#ipais').value
+            var res = document.querySelector('#res')
+            if (pais == 'Brasil') {
+                res.innerHTML = `<p>Olá, ${nome}! Sua idade é ${idade} e você é brasileiro!</p>`
+            } else if (pais == 'EUA'){
+                res.innerHTML = `<p>Olá, ${nome}! Sua idade é ${idade} e você é norte-americano!</p>`
+            } else if (pais == 'japao') {
+                res.innerHTML = `<p>Olá, ${nome}! Sua idade é ${idade} e você é japonês!</p>`
+            } else {
+                res.innerHTML = `<p>Olá, ${nome}! Sua idade é ${idade} e você é estrangeiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
